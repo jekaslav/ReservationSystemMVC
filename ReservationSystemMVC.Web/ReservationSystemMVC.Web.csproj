@@ -23,4 +23,8 @@
       <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="9.0.0-preview.3" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\ReservationSystemMVC.Domain\ReservationSystemMVC.Domain.csproj" />
+    </ItemGroup>
+
 </Project>
