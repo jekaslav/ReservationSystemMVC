@@ -14,7 +14,7 @@ public static class Startup
         builder.Services.AddControllersWithViews().AddNewtonsoftJson(options =>
         {
             options.SerializerSettings.Converters.Add(new StringEnumConverter());
-        });;
+        });
         
         var connection = builder.Configuration.GetConnectionString("PostgresConnection");
         builder.Services.AddDbContext<ReservationSystemDbContext>(opt =>
@@ -32,8 +32,42 @@ public static class Startup
             app.UseExceptionHandler("/Home/Error");
             app.UseHsts();
         }
+        app.MapControllerRoute(
+            name: "home",
+            pattern: "",
+            defaults: new { controller = "Home", action = "Index" }
+        );
+
+        app.MapControllerRoute(
+            name: "classrooms",
+            pattern: "classrooms",
+            defaults: new { controller = "Classroom", action = "GetAllClassrooms" }
+        );
         
-        app.MapControllers();
+        app.MapControllerRoute(
+            name: "GetClassroomById",
+            pattern: "classrooms/{id:int}",
+            defaults: new { controller = "Classroom", action = "GetClassroomById" }
+        );
+        
+        app.MapControllerRoute(
+            name: "CreateClassroom",
+            pattern: "classroom/create",
+            defaults: new { controller = "Classroom", action = "Create" }
+        );
+        
+        app.MapControllerRoute(
+            name: "UpdateClassroom",
+            pattern: "classrooms/update/{id}",
+            defaults: new { controller = "Classroom", action = "Update" }
+        );
+        
+        app.MapControllerRoute(
+            name: "DeleteClassroom",
+            pattern: "classrooms/delete/{id}",
+            defaults: new { controller = "Classroom", action = "Delete" }
+        );
+
         
         app.UseHttpsRedirection();
         app.UseStaticFiles();
@@ -47,9 +81,10 @@ public static class Startup
             pattern: "{controller=Home}/{action=Index}/{id?}");
     }
 
+
     private static void AddServices(this WebApplicationBuilder builder)
     {
-        // builder.Services.AddAutoMapper(typeof(EntityToDtoProfile));
+        builder.Services.AddAutoMapper(typeof(EntityToDtoProfile));
 
         builder.Services.AddScoped<IStudentService, StudentService>();
         builder.Services.AddScoped<IChiefService, ChiefService>();

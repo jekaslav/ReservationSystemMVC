@@ -1,0 +1,19 @@
+@{
+    ViewBag.Title = "Удалить данные об аудитории";
+    Layout = "_Layout";
+}
+
+<h2>Удалить данные об аудитории</h2>
+
+<form id="deleteClassroomForm" action="/classrooms/delete" method="POST">
+    <div>
+        <label for="classroomId">ID аудитории:</label>
+        <input type="text" id="classroomId" name="classroomId" required>
+    </div>
+    <button type="submit">Удалить</button>
+</form>
+
+<div id="deleteStatus"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="/js/classroom.js"></script>

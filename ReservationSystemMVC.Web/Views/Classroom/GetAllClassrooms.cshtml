@@ -1,0 +1,37 @@
+﻿@model System.Collections.Generic.IEnumerable<ReservationSystemMVC.Web.Models.ClassroomDto>
+
+@{
+    ViewBag.Title = "Список аудиторий";
+    Layout = "_Layout";
+}
+
+<h2>Список аудиторий</h2>
+
+@if (Model.Any())
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Room Number</th>
+            <th>Capacity</th>
+            <th>Location</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var classroom in Model)
+        {
+            <tr>
+                <td>@classroom.RoomNumber</td>
+                <td>@classroom.Capacity</td>
+                <td>@classroom.Location</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Нет доступных аудиторий.</p>
+}
+
+<script src="~/js/classroom.js"></script>

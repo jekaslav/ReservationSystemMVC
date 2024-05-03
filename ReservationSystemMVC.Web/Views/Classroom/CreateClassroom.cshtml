@@ -1,0 +1,24 @@
+@{
+    ViewBag.Title = "Создание аудиторий";
+    Layout = "_Layout";
+}
+
+<h2>Создать аудиторию</h2>
+
+<form id="createClassroomForm" action="@Url.Action("Create", "Classroom")" method="post"> 
+    <div>
+        <label for="roomNumber">Номер аудитории:</label>
+        <input type="text" id="roomNumber" name="roomNumber" required>
+    </div>
+    <div>
+        <label for="capacity">Вместимость:</label>
+        <input type="number" id="capacity" name="capacity" required>
+    </div>
+    <div>
+        <label for="location">Местоположение:</label>
+        <input type="text" id="location" name="location" required>
+    </div>
+    <button type="submit">Создать</button>
+</form>
+
+<div id="creationStatus"></div>

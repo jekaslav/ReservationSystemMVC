@@ -1,0 +1,26 @@
+@model ReservationSystemMVC.Web.Models.ClassroomDto
+
+@{
+    ViewBag.Title = "Детали аудитории";
+    Layout = "_Layout";
+}
+
+<h2>Детали аудитории</h2>
+
+<div id="classroomInfo">
+    <dl class="row">
+        <dt class="col-sm-2">ID:</dt>
+        <dd class="col-sm-10">@Model.Id</dd>
+        
+        <dt class="col-sm-2">Room Number:</dt>
+        <dd class="col-sm-10">@Model.RoomNumber</dd>
+        
+        <dt class="col-sm-2">Capacity:</dt>
+        <dd class="col-sm-10">@Model.Capacity</dd>
+        
+        <dt class="col-sm-2">Location:</dt>
+        <dd class="col-sm-10">@Model.Location</dd>
+    </dl>
+</div>
+
+<script src="~/js/classroom.js"></script>

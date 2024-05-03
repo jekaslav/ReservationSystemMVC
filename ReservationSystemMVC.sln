@@ -2,8 +2,6 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReservationSystemMVC.Web", "ReservationSystemMVC.Web\ReservationSystemMVC.Web.csproj", "{D5863922-211A-4B67-9EED-1E4F5AB70C30}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReservationSystemMVC.API", "ReservationSystemMVC.API\ReservationSystemMVC.API.csproj", "{A118ABEE-44DA-47AC-916B-677E30EFF6E1}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReservationSystemMVC.Domain", "ReservationSystemMVC.Domain\ReservationSystemMVC.Domain.csproj", "{CF2661A8-9FCE-418D-84DE-D7F6E6319221}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReservationSystemMVC.Services", "ReservationSystemMVC.Services\ReservationSystemMVC.Services.csproj", "{92CB5B17-C690-4F53-9433-540FCD716898}"
@@ -18,10 +16,6 @@ Global
 		{D5863922-211A-4B67-9EED-1E4F5AB70C30}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D5863922-211A-4B67-9EED-1E4F5AB70C30}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D5863922-211A-4B67-9EED-1E4F5AB70C30}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A118ABEE-44DA-47AC-916B-677E30EFF6E1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A118ABEE-44DA-47AC-916B-677E30EFF6E1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A118ABEE-44DA-47AC-916B-677E30EFF6E1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A118ABEE-44DA-47AC-916B-677E30EFF6E1}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CF2661A8-9FCE-418D-84DE-D7F6E6319221}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CF2661A8-9FCE-418D-84DE-D7F6E6319221}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF2661A8-9FCE-418D-84DE-D7F6E6319221}.Release|Any CPU.ActiveCfg = Release|Any CPU
