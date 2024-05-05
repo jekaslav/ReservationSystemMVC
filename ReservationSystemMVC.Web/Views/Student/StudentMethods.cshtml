@@ -1,0 +1,23 @@
+@{
+    ViewBag.Title = "Students";
+    Layout = "_Layout";
+}
+
+<h2>Выберите действие</h2>
+
+<div>
+    <a href="@Url.Action("GetAllStudents", "Student")">Список студентов</a><br/>
+    
+    <form id="studentDetailsForm" action="@Url.Action("GetStudentById", "Student")">
+    
+        <label for="studentId">Введите ID студента:</label>
+        <input type="text" id="studentId" name="studentId">
+        <button type="submit" id="getStudentBtn">Получить информацию</button>
+    </form>
+    
+    <a href="@Url.Action("Create", "Student")">Создать запись студента</a><br/>
+    
+    <a href="@Url.Action("Update", "Student")">Изменить информацию о студенте</a><br/>
+    
+    <a href="@Url.Action("Delete", "Student")">Удалить информацию о студенте</a><br/>
+</div>

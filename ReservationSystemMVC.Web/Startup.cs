@@ -46,7 +46,7 @@ public static class Startup
         
         app.MapControllerRoute(
             name: "GetClassroomById",
-            pattern: "classrooms/{id:int}",
+            pattern: "classrooms/{id}",
             defaults: new { controller = "Classroom", action = "GetClassroomById" }
         );
         
@@ -66,6 +66,36 @@ public static class Startup
             name: "DeleteClassroom",
             pattern: "classrooms/delete/{id}",
             defaults: new { controller = "Classroom", action = "Delete" }
+        );
+        
+        app.MapControllerRoute(
+            name: "student",
+            pattern: "student",
+            defaults: new { controller = "Student", action = "GetAllStudents" }
+        );
+        
+        app.MapControllerRoute(
+            name: "GetStudentById",
+            pattern: "students/{id}",
+            defaults: new { controller = "Student", action = "GetStudentById" }
+        );
+        
+        app.MapControllerRoute(
+            name: "CreateStudent",
+            pattern: "student/create",
+            defaults: new { controller = "Student", action = "Create" }
+        );
+        
+        app.MapControllerRoute(
+            name: "UpdateStudent",
+            pattern: "student/update/{id}",
+            defaults: new { controller = "Student", action = "Update" }
+        );
+        
+        app.MapControllerRoute(
+            name: "DeleteStudent",
+            pattern: "student/delete/{id}",
+            defaults: new { controller = "Student", action = "Delete" }
         );
 
         

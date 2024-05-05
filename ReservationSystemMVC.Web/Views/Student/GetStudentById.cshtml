@@ -1,0 +1,23 @@
+@model ReservationSystemMVC.Web.Models.StudentDto
+
+@{
+    ViewBag.Title = "Информация о студенте";
+    Layout = "_Layout";
+}
+
+<h2>Информация о студенте</h2>
+
+<div id="studentInfo">
+    <dl class="row">
+        <dt class="col-sm-2">ID:</dt>
+        <dd class="col-sm-10">@Model.Id</dd>
+        
+        <dt class="col-sm-2">Name:</dt>
+        <dd class="col-sm-10">@Model.Name</dd>
+        
+        <dt class="col-sm-2">Email:</dt>
+        <dd class="col-sm-10">@Model.Email</dd>
+    </dl>
+</div>
+
+<script src="~/js/student.js"></script>

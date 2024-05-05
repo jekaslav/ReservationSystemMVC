@@ -1,0 +1,20 @@
+@{
+    ViewBag.Title = "Создание записи студента";
+    Layout = "_Layout";
+}
+
+<h2>Создать запись студента</h2>
+
+<form id="createStudentForm" action="@Url.Action("Create", "Student")" method="post"> 
+    <div>
+        <label for="studentName">Имя студента:</label>
+        <input type="text" id="studentName" name="studentName" required>
+    </div>
+    <div>
+        <label for="studentEmail">Email:</label>
+        <input type="email" id="studentEmail" name="studentEmail" required>
+    </div>
+    <button type="submit">Создать</button>
+</form>
+
+<div id="creationStatus"></div>
