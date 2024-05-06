@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "Отобрать контроль за аудиторией";
+    Layout = "_Layout";
+}
+
+<h2>Отобрать контроль за аудиторией</h2>
+
+<form id="releaseControlForm" action="@Url.Action("ReleaseControl", "Chief")" method="post">
+    <div>
+        <label for="classroomId">ID аудитории:</label>
+        <input type="text" id="classroomId" name="classroomId" required>
+    </div>
+    <div>
+        <label for="chiefId">ID следящего:</label>
+        <input type="text" id="chiefId" name="chiefId" required>
+    </div>
+    <button type="submit">Отобрать контроль</button>
+</form>
+
+<div id="releaseControlStatus"></div>

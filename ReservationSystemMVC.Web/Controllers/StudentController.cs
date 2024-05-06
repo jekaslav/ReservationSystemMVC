@@ -50,7 +50,6 @@ public class StudentController : Controller
         return RedirectToAction("StudentMethods");
     }
 
-    
     [HttpGet("student/update")]
     public IActionResult Update()
     {

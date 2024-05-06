@@ -98,6 +98,47 @@ public static class Startup
             defaults: new { controller = "Student", action = "Delete" }
         );
         
+        app.MapControllerRoute(
+            name: "chiefs",
+            pattern: "chiefs",
+            defaults: new { controller = "Chief", action = "GetAllChiefs" }
+        );
+        
+        app.MapControllerRoute(
+            name: "GetChiefById",
+            pattern: "chiefs/{id}",
+            defaults: new { controller = "Chief", action = "GetChiefById" }
+        );
+        
+        app.MapControllerRoute(
+            name: "CreateStudent",
+            pattern: "chiefs/create",
+            defaults: new { controller = "Chief", action = "Create" }
+        );
+        
+        app.MapControllerRoute(
+            name: "UpdateStudent",
+            pattern: "chiefs/update/{id}",
+            defaults: new { controller = "Chief", action = "Update" }
+        );
+        
+        app.MapControllerRoute(
+            name: "DeleteStudent",
+            pattern: "chiefs/delete/{id}",
+            defaults: new { controller = "Chief", action = "Delete" }
+        );
+        
+        app.MapControllerRoute(
+            name: "TakeControl",
+            pattern: "chief/takecontrol",
+            defaults: new { controller = "Chief", action = "TakeControl" }
+        );
+
+        app.MapControllerRoute(
+            name: "ReleaseControl",
+            pattern: "chief/releasecontrol",
+            defaults: new { controller = "Chief", action = "ReleaseControl" }
+        );
         
         app.UseHttpsRedirection();
         app.UseStaticFiles();

@@ -1,0 +1,27 @@
+@{
+    ViewBag.Title = "Изменить данные ответственного";
+    Layout = "_Layout";
+}
+
+<h2>Изменить данные ответственного</h2>
+
+<form id="updateChiefForm" action="#">
+    <div>
+        <label for="chiefId">ID ответственного:</label>
+        <input type="text" id="chiefId" name="chiefId" required>
+    </div>
+    <div>
+        <label for="Name">Новое имя:</label>
+        <input type="text" id="Name" name="Name" required>
+    </div>
+    <div>
+        <label for="Email">Новый email:</label>
+        <input type="email" id="Email" name="Email" required>
+    </div>
+    <button type="submit">Обновить</button>
+</form>
+
+<div id="updateStatus"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="/js/chief.js"></script>

@@ -1,0 +1,19 @@
+﻿@{
+    ViewBag.Title = "Удалить данные ответственного";
+    Layout = "_Layout";
+}
+
+<h2>Удалить данные ответственного</h2>
+
+<form id="deleteChiefForm" action="/student/delete" method="POST">
+    <div>
+        <label for="chiefId">ID ответственного:</label>
+        <input type="text" id="chiefId" name="chiefId" required>
+    </div>
+    <button type="submit">Удалить</button>
+</form>
+
+<div id="deleteStatus"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="/js/chief.js"></script>

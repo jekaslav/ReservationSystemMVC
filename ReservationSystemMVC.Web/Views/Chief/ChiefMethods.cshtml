@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Chiefs";
+    Layout = "_Layout";
+}
+
+<h2>Выберите действие</h2>
+
+<div>
+    <a href="@Url.Action("GetAllChiefs", "Chief")">Список ответственных за аудитории</a><br>
+    
+    <form id="chiefDetailsForm" action="@Url.Action("GetChiefById", "Chief")">
+        <label for="chiefId">Введите ID ответственного:</label>
+        <input type="text" id="chiefId" name="chiefId">
+        <button type="submit" id="getChiefBtn">Получить информацию</button>
+    </form>
+    
+    <a href="@Url.Action("Create", "Chief")">Создать запись ответственного</a><br>
+    
+    <a href="@Url.Action("Update", "Chief")">Изменить информацию об ответственном</a><br>
+    
+    <a href="@Url.Action("Delete", "Chief")">Удалить информацию об ответственном</a><br>
+    
+    <a href="@Url.Action("TakeControl", "Chief")">TakeControl</a><br>
+    
+    <a href="@Url.Action("ReleaseControl", "Chief")">ReleaseControl</a><br>
+    
+</div>

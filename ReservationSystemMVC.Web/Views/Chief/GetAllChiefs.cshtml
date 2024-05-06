@@ -1,0 +1,35 @@
+@model System.Collections.Generic.IEnumerable<ReservationSystemMVC.Web.Models.ChiefDto>
+
+@{
+    ViewBag.Title = "Список ответственных";
+    Layout = "_Layout";
+}
+
+<h2>Список ответственных</h2>
+
+@if (Model.Any())
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var chief in Model)
+        {
+            <tr>
+                <td>@chief.Name</td>
+                <td>@chief.Email</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Ответственных нет</p>
+}
+
+<script src="~/js/chief.js"></script>
