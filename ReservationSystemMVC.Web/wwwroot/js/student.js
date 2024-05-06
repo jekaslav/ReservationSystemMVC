@@ -53,8 +53,8 @@ $(document).ready(function () {
             event.preventDefault();
 
             var formData = {
-                studentName: $('#studentName').val(),
-                studentEmail: $('#studentEmail').val(),
+                Name: $('#Name').val(),
+                Email: $('#Email').val()
             };
 
             $.ajax({
@@ -72,5 +72,55 @@ $(document).ready(function () {
             });
         });
     });
+    
+    
+// Update
 
+    $(document).ready(function () {
+        $('#updateStudentForm').submit(function (event) {
+            event.preventDefault();
+
+            var formData = {
+                Name: $('#Name').val(),
+                Email: $('#Email').val()
+            };
+
+            var studentId = $('#studentId').val();
+
+            $.ajax({
+                url: '/student/update/' + studentId,
+                type: 'PUT',
+                contentType: 'application/json',
+                data: JSON.stringify(formData),
+                success: function (data) {
+                    $('#updateStatus').text(data);
+                },
+                error: function (xhr, status, error) {
+                    $('#updateStatus').text(xhr.responseText);
+                }
+            });
+        });
+    });
+
+    
+// Delete
+    
+    $(document).ready(function () {
+        $('#deleteStudentForm').submit(function (event) {
+            event.preventDefault();
+
+            var studentId = $('#studentId').val();
+
+            $.ajax({
+                url: '/student/' + studentId,
+                type: 'DELETE',
+                success: function (data) {
+                    $('#deleteStatus').text(data);
+                },
+                error: function (xhr, status, error) {
+                    $('#deleteStatus').text(xhr.responseText);
+                }
+            });
+        });
+    });
 })

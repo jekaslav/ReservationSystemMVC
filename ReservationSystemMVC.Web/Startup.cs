@@ -97,7 +97,7 @@ public static class Startup
             pattern: "student/delete/{id}",
             defaults: new { controller = "Student", action = "Delete" }
         );
-
+        
         
         app.UseHttpsRedirection();
         app.UseStaticFiles();
