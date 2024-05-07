@@ -1,0 +1,26 @@
+@model ReservationSystemMVC.Web.Models.ReservationRequestDto
+
+@{
+    ViewBag.Title = "Обновление статуса заявки";
+    Layout = "_Layout";
+}
+
+<h2>Обновление статуса заявки</h2>
+
+<div>
+    <label for="chiefId">ID администратора аудитории:</label>
+    <input type="text" id="chiefId" name="chiefId" required>
+    <label for="reservationRequestId">ID заявки:</label>
+    <input type="text" id="reservationRequestId" name="reservationRequestId" required>
+    <label for="newStatus">Новый статус:</label>
+    <select id="newStatus">
+        <option value="0">Pending</option>
+        <option value="1">Approved</option>
+        <option value="2">Rejected</option>
+    </select>
+    <button id="updateStatusButton">Обновить статус</button>
+</div>
+
+<div id="updateStatusResult"></div>
+
+<script src="~/js/reservationRequest.js"></script>

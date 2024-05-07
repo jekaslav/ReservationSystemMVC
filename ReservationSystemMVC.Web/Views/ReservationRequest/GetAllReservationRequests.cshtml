@@ -1,0 +1,41 @@
+@model System.Collections.Generic.IEnumerable<ReservationSystemMVC.Web.Models.ReservationRequestDto>
+
+@{
+    ViewBag.Title = "Заявки";
+    Layout = "_Layout";
+}
+
+<h2>Список заявок</h2>
+
+@if (Model.Any())
+{
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID студента</th>
+            <th>ID аудитории</th>
+            <th>Начало</th>
+            <th>Окончание</th>
+            <th>Статус</th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var request in Model)
+        {
+            <tr>
+                <td>@request.StudentId</td>
+                <td>@request.ClassroomId</td>
+                <td>@request.StartTime</td>
+                <td>@request.EndTime</td>
+                <td>@request.Status</td>
+            </tr>
+        }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Заявок нет</p>
+}
+
+<script src="~/js/reservationRequest.js"></script>

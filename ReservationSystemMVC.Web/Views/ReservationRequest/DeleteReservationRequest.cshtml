@@ -1,0 +1,19 @@
+@{
+    ViewBag.Title = "Удаление заявки";
+    Layout = "_Layout";
+}
+
+<h2>Удалить заявку</h2>
+
+<form id="deleteRequestForm" action="/requests/delete" method="POST">
+    <div>
+        <label for="requestId">ID заявки:</label>
+        <input type="text" id="requestId" name="requestId" required>
+    </div>
+    <button type="submit">Удалить</button>
+</form>
+
+<div id="deleteStatus"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="/js/reservationRequest.js"></script>

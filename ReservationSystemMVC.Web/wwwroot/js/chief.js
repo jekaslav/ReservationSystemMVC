@@ -8,7 +8,7 @@ $(document).ready(function () {
             displayChiefs(data);
         },
         error: function () {
-            alert('Ошибка при получении данных студентов.');
+            alert('Ошибка при получении данных.');
         }
     });
 
@@ -39,7 +39,7 @@ $(document).ready(function () {
                     $('#chiefInfo').html(data);
                 },
                 error: function () {
-                    alert('Произошла ошибка при получении данных студента.');
+                    alert('Произошла ошибка при получении данных ответственного.');
                 }
             });
         });

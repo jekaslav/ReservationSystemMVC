@@ -19,4 +19,33 @@ html {
 
 body {
   margin-bottom: 60px;
+  background-color: #f2f2f2;
+}
+
+/* Общие стили для всех кнопок */
+.primary-button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: 1px solid #007bff; /* Цвет рамки */
+  border-radius: 4px; /* Скругленные углы */
+  background-color: #007bff; /* Цвет фона */
+  color: #fff; /* Цвет текста */
+  text-align: center;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s, border-color 0.3s; /* Плавные переходы */
+}
+
+/* Стили при наведении курсора */
+.primary-button:hover {
+  background-color: #6ba4e2; /* Изменение цвета фона при наведении */
+  border-color: #6ba4e2; /* Изменение цвета рамки при наведении */
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 20px;
 }

@@ -111,19 +111,19 @@ public static class Startup
         );
         
         app.MapControllerRoute(
-            name: "CreateStudent",
+            name: "CreateChief",
             pattern: "chiefs/create",
             defaults: new { controller = "Chief", action = "Create" }
         );
         
         app.MapControllerRoute(
-            name: "UpdateStudent",
+            name: "UpdateChief",
             pattern: "chiefs/update/{id}",
             defaults: new { controller = "Chief", action = "Update" }
         );
         
         app.MapControllerRoute(
-            name: "DeleteStudent",
+            name: "DeleteChief",
             pattern: "chiefs/delete/{id}",
             defaults: new { controller = "Chief", action = "Delete" }
         );
@@ -138,6 +138,42 @@ public static class Startup
             name: "ReleaseControl",
             pattern: "chief/releasecontrol",
             defaults: new { controller = "Chief", action = "ReleaseControl" }
+        );
+        
+        app.MapControllerRoute(
+            name: "requests",
+            pattern: "requests",
+            defaults: new { controller = "ReservationRequest", action = "GetAllReservationRequests" }
+        );
+        
+        app.MapControllerRoute(
+            name: "GetRequestById",
+            pattern: "requests/{id}",
+            defaults: new { controller = "ReservationRequest", action = "GetReservationRequestById" }
+        );
+        
+        app.MapControllerRoute(
+            name: "CreateRequest",
+            pattern: "requests/create",
+            defaults: new { controller = "ReservationRequest", action = "Create" }
+        );
+        
+        app.MapControllerRoute(
+            name: "UpdateRequest",
+            pattern: "requests/update/{id}",
+            defaults: new { controller = "ReservationRequest", action = "Update" }
+        );
+        
+        app.MapControllerRoute(
+            name: "DeleteRequest",
+            pattern: "requests/delete/{id}",
+            defaults: new { controller = "ReservationRequest", action = "Delete" }
+        );
+        
+        app.MapControllerRoute(
+            name: "UpdateReservationRequestStatus",
+            pattern: "requests/{chiefId}/{reservationRequestId}/{newStatus}",
+            defaults: new { controller = "ReservationRequest", action = "UpdateReservationRequestStatus" }
         );
         
         app.UseHttpsRedirection();
@@ -161,6 +197,5 @@ public static class Startup
         builder.Services.AddScoped<IChiefService, ChiefService>();
         builder.Services.AddScoped<IClassroomService, ClassroomService>();
         builder.Services.AddScoped<IReservationRequestService, ReservationRequestService>();
-        
     }
 }

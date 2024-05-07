@@ -1,0 +1,32 @@
+@model ReservationSystemMVC.Web.Models.ReservationRequestDto
+
+@{
+    ViewBag.Title = "Заявка";
+    Layout = "_Layout";
+}
+
+<h2>Информация о заявке</h2>
+
+<div id="requestInfo">
+    <dl class="row">
+        <dt class="col-sm-2">ID:</dt>
+        <dd class="col-sm-10">@Model.Id</dd>
+        
+        <dt class="col-sm-2">ID студента:</dt>
+        <dd class="col-sm-10">@Model.StudentId</dd>
+        
+        <dt class="col-sm-2">ID аудитории:</dt>
+        <dd class="col-sm-10">@Model.ClassroomId</dd>
+        
+        <dt class="col-sm-2">Начало:</dt>
+        <dd class="col-sm-10">@Model.StartTime</dd>
+        
+        <dt class="col-sm-2">Окончание:</dt>
+        <dd class="col-sm-10">@Model.EndTime</dd>
+        
+        <dt class="col-sm-2">Статус:</dt>
+        <dd class="col-sm-10">@Model.Status</dd>
+    </dl>
+</div>
+
+<script src="~/js/reservationRequest.js"></script>

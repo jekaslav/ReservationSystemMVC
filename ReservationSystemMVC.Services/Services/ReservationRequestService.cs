@@ -63,20 +63,25 @@ public class ReservationRequestService : IReservationRequestService
             {
                 throw new ArgumentNullException(nameof(requestDto));
             }
+            
+            var startTime = requestDto.StartTime.UtcDateTime;
+            var endTime = requestDto.EndTime.UtcDateTime;
 
             var newRequest = new ReservationRequestEntity()
             {
+                Id = requestDto.Id,
                 ClassroomId = requestDto.ClassroomId,
                 StudentId = requestDto.StudentId,
-                StartTime = requestDto.StartTime,
-                EndTime = requestDto.EndTime,
+                StartTime = startTime,
+                EndTime = endTime,
             };
-            
+    
             ReservationSystemDbContext.ReservationRequests.Add(newRequest);
             await ReservationSystemDbContext.SaveChangesAsync(cancellationToken);
 
             return true;
         }
+
         
         public async Task<bool> Update(int id, ReservationRequestDto requestDto, CancellationToken cancellationToken)
         {

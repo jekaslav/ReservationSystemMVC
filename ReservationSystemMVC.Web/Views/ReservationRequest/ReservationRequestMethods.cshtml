@@ -1,0 +1,25 @@
+@{
+    ViewBag.Title = "Reservation Requests";
+    Layout = "_Layout";
+}
+
+<h2>Выберите действие</h2>
+
+<div class="button-container">
+    
+    <a class="primary-button" href="@Url.Action("GetAllReservationRequests", "ReservationRequest")">Список заявок</a><br>
+
+    <form id="requestDetailsForm" action="@Url.Action("GetReservationRequestById", "ReservationRequest")">
+        <label for="requestId">Введите ID заявки:</label>
+        <input type="text" id="requestId" name="requestId">
+        <button type="submit" id="getRequestBtn">Получить информацию</button>
+    </form>
+
+    <a class="primary-button" href="@Url.Action("Create", "ReservationRequest")">Создать заявку</a><br>
+
+    <a class="primary-button" href="@Url.Action("Update", "ReservationRequest")">Изменить заявку</a><br>
+
+    <a class="primary-button" href="@Url.Action("Delete", "ReservationRequest")">Удалить заявку</a><br>
+    
+    <a class="primary-button" href="@Url.Action("UpdateReservationRequestStatus", "ReservationRequest")">Изменить статус заявки</a><br>
+</div>

@@ -41,7 +41,7 @@ $(document).ready(function () {
                     $('#classroomInfo').html(data); 
                 },
                 error: function () {
-                    alert('Произошла ошибка при получении данных об аудитории.');
+                    alert('Произошла ошибка при получении данных аудитории.');
                 }
             });
         });

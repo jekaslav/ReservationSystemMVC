@@ -1,0 +1,33 @@
+@{
+    ViewBag.Title = "Редактирование заявки";
+    Layout = "_Layout";
+}
+
+<h2>Изменить данные заявки</h2>
+
+<form id="updateRequestForm" action="#">
+    <div>
+        
+        <label for="studentId">ID студента:</label>
+        <input type="text" id="studentId" name="studentId" required>
+    </div>
+    <div>
+        <label for="classroomId">ID аудитории:</label>
+        <input type="text" id="classroomId" name="classroomId" required>
+    </div>
+    <div>
+        <label for="startTime">Начало:</label>
+        <input type="datetime-local" id="startTime" name="startTime" required>
+    </div>
+    <div>
+        <label for="endTime">Окончание:</label>
+        <input type="datetime-local" id="endTime" name="endTime" required>
+    </div>
+    
+    <button type="submit">Обновить</button>
+</form>
+
+<div id="updateStatus"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="/js/reservationRequest.js"></script>

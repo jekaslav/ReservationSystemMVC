@@ -1,0 +1,30 @@
+@{
+    ViewBag.Title = "Создание заявки";
+    Layout = "_Layout";
+}
+
+<h2>Создать заявку</h2>
+
+<form id="createRequestForm" action="@Url.Action("Create", "ReservationRequest")" method="post">
+    
+    <div>
+        <label for="studentId">ID студента:</label>
+        <input type="text" id="studentId" name="studentId" required>
+    </div>
+    <div>
+        <label for="classroomId">ID аудитории:</label>
+        <input type="text" id="classroomId" name="classroomId" required>
+    </div>
+    <div>
+        <label for="startTime">Начало:</label>
+        <input type="datetime-local" id="startTime" name="startTime" required>
+    </div>
+    <div>
+        <label for="endTime">Окончание:</label>
+        <input type="datetime-local" id="endTime" name="endTime" required>
+    </div>
+
+    <button type="submit">Создать</button>
+</form>
+
+<div id="creationStatus"></div>

@@ -5,8 +5,8 @@
 
 <h2>Выберите действие</h2>
 
-<div>
-    <a href="@Url.Action("GetAllClassrooms", "Classroom")">Список доступных аудиторий</a><br/>
+<div class="button-container">
+    <a class="primary-button" href="@Url.Action("GetAllClassrooms", "Classroom")">Список доступных аудиторий</a><br/>
     
     <form id="classroomDetailsForm" action="@Url.Action("GetClassroomById", "Classroom")">
         <label for="classroomId">Введите ID аудитории:</label>
@@ -14,10 +14,10 @@
         <button type="submit" id="getClassroomBtn">Получить информацию</button>
     </form>
     
-    <a href="@Url.Action("Create", "Classroom")">Создать аудиторию</a><br/>
+    <a class="primary-button" href="@Url.Action("Create", "Classroom")">Создать аудиторию</a><br/>
     
-    <a href="@Url.Action("Update", "Classroom")">Изменить информацию об аудитории</a><br/>
+    <a class="primary-button" href="@Url.Action("Update", "Classroom")">Изменить информацию об аудитории</a><br/>
     
-    <a href="@Url.Action("Delete", "Classroom")">Удалить информацию об аудитории</a><br/>
+    <a class="primary-button" href="@Url.Action("Delete", "Classroom")">Удалить информацию об аудитории</a><br/>
     
 </div>
