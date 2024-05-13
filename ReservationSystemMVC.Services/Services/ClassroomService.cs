@@ -47,7 +47,7 @@ public class ClassroomService : IClassroomService
             
         if (classroom is null)
         {
-            throw new NullReferenceException();
+            throw new NullReferenceException($"Classroom with ID {id} not found.");
         }
             
         var result = Mapper.Map<ClassroomDto>(classroom);

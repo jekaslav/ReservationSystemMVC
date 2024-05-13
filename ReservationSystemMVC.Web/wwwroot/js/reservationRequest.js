@@ -133,10 +133,11 @@ $(document).ready(function () {
     });
 
 
+// UpdateStatus    
 
 $(document).ready(function () {
     $('#updateStatusButton').click(function (event) {
-        event.preventDefault(); // предотвращаем стандартное поведение кнопки отправки формы
+        event.preventDefault();
 
         var chiefId = $('#chiefId').val();
         var reservationRequestId = $('#reservationRequestId').val();

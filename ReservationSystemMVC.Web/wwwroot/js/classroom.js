@@ -28,24 +28,29 @@ $(document).ready(function () {
 
     $(document).ready(function () {
         $('#classroomDetailsForm').submit(function (event) {
-            event.preventDefault(); 
+            event.preventDefault();
 
-            var classroomId = $('#classroomId').val(); 
-            
+            var classroomId = $('#classroomId').val();
+
             var url = '/classrooms/' + classroomId;
-            
+
             $.ajax({
                 url: url,
                 type: 'GET',
                 success: function (data) {
-                    $('#classroomInfo').html(data); 
+                    $('#classroomInfo').html(data);
                 },
-                error: function () {
-                    alert('Произошла ошибка при получении данных аудитории.');
+                error: function (xhr, status, error) {
+                    if (xhr.status == 404) {
+                        alert('Запись не найдена.');
+                    } else {
+                        alert('Произошла ошибка при получении данных аудитории.');
+                    }
                 }
             });
         });
     });
+
 
 
 // Create

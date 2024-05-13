@@ -28,8 +28,15 @@ public class ClassroomController : Controller
     public async Task<IActionResult> GetClassroomById(int classroomId, CancellationToken cancellationToken)
     {
         var result = await ClassroomService.GetClassroomById(classroomId, cancellationToken);
-        return View(result);
+    
+        if (result != null)
+        {
+            return View(result);
+        }
+        
+        return NotFound("Запись не найдена.");
     }
+
     
     [HttpGet("classroom/create")]
     public IActionResult Create()
@@ -74,5 +81,4 @@ public class ClassroomController : Controller
         var result = await ClassroomService.Delete(id, cancellationToken);
         return Ok(result);
     }
-
 }
